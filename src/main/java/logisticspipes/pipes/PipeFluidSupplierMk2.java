@@ -77,9 +77,11 @@ public class PipeFluidSupplierMk2 extends FluidRoutedPipe
                                         .child(
                                                 new TextFieldWidget().marginLeft(6).width(80)
                                                         .setNumbers(0, Integer.MAX_VALUE).value(
-                                                                SyncHandlers.intNumber(
-                                                                        () -> amount,
-                                                                        value -> this.amount = value)))
+                                                                SyncHandlers
+                                                                        .intNumber(
+                                                                                () -> amount,
+                                                                                value -> this.amount = value)
+                                                                        .allowC2S()))
                                         .child(IKey.str("mB").asWidget().marginLeft(3)))
                         .child(
                                 new Row().mainAxisAlignment(Alignment.MainAxis.CENTER)
